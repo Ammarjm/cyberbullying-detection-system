@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyberbullying Detection System</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI Text Analysis</p>
+        <h1>Cyberbullying Detection System</h1>
+        <p class="subtitle">Enter a tweet or comment. The system predicts the cyberbullying type, severity level, and severity score.</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card analyzer-card">
+        <h2>Analyze Text</h2>
+        <label for="textInput">Tweet or comment</label>
+        <textarea id="textInput" rows="7" placeholder="Type the text here..."></textarea>
+        <p class="input-hint">Tip: press Ctrl + Enter to analyze quickly.</p>
+        <div class="actions-row">
+          <button id="analyzeBtn" type="button">Analyze</button>
+          <button id="clearBtn" type="button" class="secondary">Clear</button>
+        </div>
+        <p id="status" class="status" aria-live="polite"></p>
+      </article>
+
+      <article class="card result-card" id="resultCard">
+        <h2>Result</h2>
+        <div class="result-empty" id="emptyState">The result will appear here after analysis.</div>
+        <div class="result-panel hidden" id="resultPanel">
+          <div class="result-top">
+            <span id="threatBadge" class="badge">LOW</span>
+            <span id="scoreText" class="score">0.0000</span>
+          </div>
+          <dl class="result-list">
+            <div>
+              <dt>Cyberbullying type</dt>
+              <dd id="typeText">-</dd>
+            </div>
+            <div>
+              <dt>Threat level</dt>
+              <dd id="levelText">-</dd>
+            </div>
+            <div>
+              <dt>Severity score</dt>
+              <dd id="severityText">-</dd>
+            </div>
+            <div>
+              <dt>BERT toxicity score</dt>
+              <dd id="bertText">-</dd>
+            </div>
+            <div>
+              <dt>Rule score</dt>
+              <dd id="ruleText">-</dd>
+            </div>
+            <div>
+              <dt>Context mitigation</dt>
+              <dd id="contextText">-</dd>
+            </div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <section class="card metrics-card">
+      <h2>Model Performance Summary</h2>
+      <div class="metrics-grid">
+        <div class="metric"><span>Accuracy</span><strong id="metricAccuracy">-</strong></div>
+        <div class="metric"><span>Macro Precision</span><strong id="metricPrecision">-</strong></div>
+        <div class="metric"><span>Macro Recall</span><strong id="metricRecall">-</strong></div>
+        <div class="metric"><span>Macro F1-Score</span><strong id="metricMacroF1">-</strong></div>
+        <div class="metric"><span>Weighted F1-Score</span><strong id="metricWeightedF1">-</strong></div>
+        <div class="metric"><span>Overall Grade</span><strong id="metricGrade">-</strong></div>
+      </div>
+      <p class="report-note" id="reportNote">Loading report...</p>
+    </section>
+
+    <section class="card matrix-card">
+      <h2>Confusion Matrix</h2>
+      <img src="/static/confusion_matrix.png" alt="Confusion matrix for the cyberbullying detection model">
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

@@ -91,7 +91,7 @@ python app.py
 
 Open **http://127.0.0.1:5000** in your browser.
 
-## 👤 Author
+## 👤 Author :
 
 **Ammar Alsabateen** — AI & Machine Learning Engineer
 Faculty of Artificial Intelligence, Al-Balqa Applied University
